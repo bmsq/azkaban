@@ -426,9 +426,9 @@ public class ProjectManagerServlet extends LoginAbstractAzkabanServlet {
 
   /**
    * Download project zip file from DB and send it back client.
-   * 
+   *
    * This method requires a project name and an optional project version.
-   * 
+   *
    * @param req
    * @param resp
    * @param session
@@ -1620,11 +1620,11 @@ public class ProjectManagerServlet extends LoginAbstractAzkabanServlet {
         }
         ret.put("error", "Installation Failed.<br>" + error);
       } finally {
-        if (tempDir.exists()) {
-          FileUtils.deleteDirectory(tempDir);
-        }
         if (out != null) {
           out.close();
+        }
+        if (tempDir.exists()) {
+          FileUtils.deleteDirectory(tempDir);
         }
       }
 
